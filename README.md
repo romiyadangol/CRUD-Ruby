@@ -1,24 +1,38 @@
-# README
+# CRUD Ruby Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
 
-Things you may want to cover:
+This is a Ruby on Rails application that demonstrates basic CRUD (Create, Read, Update, Delete) operations. It allows users to manage resources with a simple and intuitive interface.
 
-* Ruby version
+## Features
 
-* System dependencies
+- **Create**: Add new records to the application.
+- **Read**: View a list of records and individual details.
+- **Update**: Modify existing records.
+- **Delete**: Remove records from the application.
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Prerequisites
 
-* Database initialization
+Ensure you have the following installed:
+- Ruby (version 3.3.3 or later)
+- Rails (version 7.0 or later)
+- SQLite (for database management)
 
-* How to run the test suite
+### Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/romiyadangol/crud-Ruby.git
+   cd crud-Ruby
 
-* Deployment instructions
-
-* ...
+2. Screenshots
+  - All Articles
+     ![ss_img](/1.png)
+  - Show Article
+     ![ss_img](/2.png)
+  - Add New Article
+     ![ss_img](/3.png)
+  
+  
