@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+.article-container {
+  max-width: 800px;
+  margin: 0 auto; /* Centers the content on the page */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center; /* Centers the title */
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+ul li {
+  font-size: 1rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment-form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.comment-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
