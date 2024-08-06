@@ -1,13 +1,16 @@
 <%= stylesheet_link_tag 'index' %>
 
+Our blog has <%= Article.public_count %> articles and counting!
 <div class="card-container">
   <% @articles.each do |article| %>
     <div class="card">
+    <% unless article.archived? %>
       <div class="card-body">
         <h3><%= link_to article.title, article %></h3>
         <p><%= article.body %></p>
       </div>
     </div>
+    <% end %>
     <hr class="hr">
   <% end %>
 </div>

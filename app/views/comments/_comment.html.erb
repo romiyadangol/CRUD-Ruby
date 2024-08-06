@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'application' %>
-
+<% unless comment.archived? %>
 <p>
   <strong>Commenter:</strong>
   <%= comment.commenter %>
@@ -9,3 +9,11 @@
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
+<p>
+    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+</p>
+
+<% end %>
