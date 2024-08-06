@@ -1,18 +1,22 @@
 <%= stylesheet_link_tag 'index' %>
 
-Our blog has <%= Article.public_count %> articles and counting!
 <div class="card-container">
+  <p>Our blog has <%= Article.public_count %> articles and counting!</p>
   <% @articles.each do |article| %>
     <div class="card">
-    <% unless article.archived? %>
-      <div class="card-body">
-        <h3><%= link_to article.title, article %></h3>
-        <p><%= article.body %></p>
-      </div>
+      <% unless article.archived? %>
+        <div class="card-row">
+          <div class="date">
+            <p><%= Time.now.strftime("%B %d, %Y") %></p>
+          </div>
+          <div class="card-body">
+            <h3><%= link_to article.title, article %></h3>
+            <p><%= article.body %></p>
+            <span>- Posted By Romiya Dangol</span>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <% end %>
     <hr class="hr">
   <% end %>
 </div>
-
-
