@@ -27,12 +27,6 @@ Ensure you have the following installed:
    git clone https://github.com/romiyadangol/crud-Ruby.git
    cd crud-Ruby
 
-2. Screenshots
-  - All Articles
-     ![ss_img](/screenshots/1.png)
-  - Show Article
-     ![ss_img](/screenshots/2.png)
-  - Add New Article
-     ![ss_img](/screenshots/3.png)
+
   
   
