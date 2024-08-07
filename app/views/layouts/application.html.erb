@@ -19,6 +19,13 @@
 
   <%= javascript_importmap_tags %>
 </head>
+<style>
+
+  .btn {
+    font-size: 20px;
+  }
+</style>
+
 <body>
   <%= image_tag 'logo.webp', alt: 'Ruby Logo', class: 'logo-small' %>
 
@@ -36,23 +43,21 @@
             <li class="nav-item">
               <%= link_to "New Article", new_article_path, class: "nav-link" %>
             </li>
+              <% if user_signed_in? %>
+                <%= link_to 'Edit profile', edit_user_registration_path,class: "btn btn-danger"  %> |
+                <%= button_to 'Logout', destroy_user_session_path, method: :delete,class: "btn btn-danger"  %>
+              <% else %>
+                <%= link_to 'Sign up', new_user_registration_path,class: "btn btn-danger"  %> |
+                <%= link_to 'Login', new_user_session_path ,class: "btn btn-danger" %>
+              <% end %>
           </ul>
         </div>
       </div>
-      
-      <% if user_signed_in? %>
-        <%= link_to 'Edit profile', edit_user_registration_path %> |
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %> |
-        <%= link_to 'Login', new_user_session_path %>
-      <% end %>
     </nav>
   </header>
 
-  <div class="container">
+  <div class="main-container">
     <%= yield %>
-   
   </div>
 </body>
 </html>
