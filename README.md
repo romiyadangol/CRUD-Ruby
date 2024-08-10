@@ -7,7 +7,7 @@ This is a Ruby on Rails application that demonstrates basic CRUD (Create, Read, 
 ## Features
 
 - **Create**: Add new records to the application.
-- **Read**: View a list of records and individual details.
+- **Read**: View a list of records and individual detail.
 - **Update**: Modify existing records.
 - **Delete**: Remove records from the application.
 
