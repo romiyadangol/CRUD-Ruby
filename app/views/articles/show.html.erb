@@ -6,11 +6,13 @@
   <p><%= @article.body %></p>
 
   <ul>
-    <li><%= link_to "Edit", edit_article_path(@article), class: "btn btn-success" %></li>
-    <li><%= link_to "Destroy", article_path(@article), data: {
-                      turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                    }, class: "btn btn-danger" %></li>
+    <% if current_user == @article.user %> 
+      <li><%= link_to "Edit", edit_article_path(@article), class: "btn btn-success" %></li>
+      <li><%= link_to "Destroy", article_path(@article), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      }, class: "btn btn-danger" %></li>
+    <% end %>
   </ul>
 
   <h2>Comments</h2>

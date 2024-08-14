@@ -20,6 +20,7 @@ gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 gem 'rspec'
 gem 'devise'
+gem 'acts_as_tenant'
 
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]

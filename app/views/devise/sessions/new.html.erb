@@ -4,6 +4,11 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
+    <%= f.label :organization %><br />
+    <%= f.select :organization_id, options_for_select(Organization.all.collect { |org| [org.name, org.id] }, session[:organization_id]) %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>

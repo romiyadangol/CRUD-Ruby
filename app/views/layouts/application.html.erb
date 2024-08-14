@@ -57,6 +57,11 @@
   </header>
 
   <div class="main-container">
+
+  <% if user_signed_in? %>
+    <p>Welcome, <%= current_user.username %> on <%= current_user.organization.name %>!</p>
+  <% end %>
+
     <%= yield %>
   </div>
 </body>

@@ -36,6 +36,8 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  
+  config.public_file_server.enabled = true
 
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.

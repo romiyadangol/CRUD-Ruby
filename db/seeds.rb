@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+["Medium", "WordPress", "Blogger", "BuzzFeed"].each do |name|
+    Organization.find_or_create_by!(name: name)
+end
