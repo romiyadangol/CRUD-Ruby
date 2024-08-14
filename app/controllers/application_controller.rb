@@ -24,10 +24,8 @@ class ApplicationController < ActionController::Base
     # Permit organization_id along with other parameters for sign up and account update
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :organization_id])
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :organization_id])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:organization_id])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password, :organization_id])
   end
 
-  def after_sign_up_path_for(resource)
-    new_user_session_path
-  end
+ 
 end

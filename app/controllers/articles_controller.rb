@@ -4,13 +4,20 @@ class ArticlesController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    if current_user
-      @articles = current_user.organization.articles
+    if current_user && current_user.organization
+      if params[:all_articles]
+        # Fetch all articles in the organization for the home page
+        @articles = current_user.organization.articles
+      else
+        # Fetch only the articles created by the logged-in user
+        @articles = current_user.articles
+      end
     else
-      # Handle the case where the user is not authenticated
+      logger.debug "Current user or organization is nil" # This will log to your development log
       redirect_to new_user_session_path, alert: 'You need to sign in to access this page.'
     end
   end
+  
 
   def show
   end

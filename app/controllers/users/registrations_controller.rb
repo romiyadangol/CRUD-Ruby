@@ -4,19 +4,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  # def create
-  #   super do |user|
-  #     if user.persisted? # Only modify if the user was successfully saved
-  #       session[:organization_id] = params[:user][:organization_id]
+  def create
+    super do |user|
+      if user.persisted? # Only modify if the user was successfully saved
+        session[:organization_id] = params[:user][:organization_id]
      
-  #     end
-  #   end
-  # end
-
-  protected
-  def after_sign_up_path_for(resource)
-    "/users/sign_in" # Redirects to login page after sign-up
+      end
+    end
   end
+
+  # protected
+  # def after_sign_up_path_for(resource)
+  #   new_user_session_path # Redirects to login page after sign-up
+  # end
   
   # GET /resource/sign_up
   # def new
@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -65,9 +65,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    sign_out
+    new_user_session_path # Redirects to login page after sign-up
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
@@ -77,7 +78,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # Remove the duplicate method definition
 
-  # def after_inactive_sign_up_path_for(resource)
-  #   new_user_session_path # Redirects to login page after sign-up if account needs confirmation
-  # end
+  def after_inactive_sign_up_path_for(resource)
+    new_user_session_path # Redirects to login page after sign-up if account needs confirmation
+  end
 end

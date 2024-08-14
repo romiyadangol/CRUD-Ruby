@@ -1,0 +1,21 @@
+<h1><%= @organization.name %></h1>
+
+<h2>Invite a User</h2>
+<%= form_with url: invite_user_organization_path(@organization), method: :post, local: true do |form| %>
+  <div class="field">
+    <%= form.label :email, "Email to invite" %><br>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Send Invitation" %>
+  </div>
+<% end %>
+
+<!-- Display the list of invited users or members -->
+<h3>Members</h3>
+<ul>
+  <% @organization.users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+</ul>
